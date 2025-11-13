@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage>
       endDrawer: const AppDrawer(),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(
-          MediaQuery.of(context).size.width < 700 ? 150 : 80, // ✅ taller on mobile
+          MediaQuery.of(context).size.width < 700 ? 200 : 80, // ⬆️ more height for mobile
         ),
         child: NavBar(onThemeToggle: widget.toggleTheme),
       ),

@@ -40,11 +40,17 @@ class ProjectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final bool isMobile = width < 700;
+
     return Scaffold(
       endDrawer: const AppDrawer(),
-      body: Stack(children: [
-        SingleChildScrollView(
-          padding: const EdgeInsets.only(top: 80),
+      body: Stack(
+          children: [
+            SingleChildScrollView(
+              padding: EdgeInsets.only(
+                top: isMobile ? 150: 80, // ✅ more space on mobile
+                             ),
           child: Column(
             children: [
               _header(context),
