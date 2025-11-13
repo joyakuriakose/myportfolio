@@ -55,9 +55,12 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       endDrawer: const AppDrawer(),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(70),
+        preferredSize: Size.fromHeight(
+          MediaQuery.of(context).size.width < 700 ? 150 : 80, // ✅ taller on mobile
+        ),
         child: NavBar(onThemeToggle: widget.toggleTheme),
       ),
+
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
