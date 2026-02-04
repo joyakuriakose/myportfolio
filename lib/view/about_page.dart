@@ -264,7 +264,7 @@ class AboutPage extends StatelessWidget {
 
   void _openResume() {
     launchUrlString(
-      "https://drive.google.com/file/d/1Cd8nnyCiXVLqZouj1GYIFhK81C805VTN/view?usp=sharing",
+      "https://drive.google.com/file/d/1G2ic8J0AnPgcN3pNPNEjXjoC9zzhm-Kf/view?usp=sharing",
       mode: LaunchMode.externalApplication,
     );
   }
