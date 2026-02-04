@@ -155,6 +155,8 @@ class AboutPage extends StatelessWidget {
       "REST API",
       "GetX",
       "Provider",
+      "Block",
+      "Riverpod",
       "Firebase",
       "SQLite",
       "Hive",
@@ -213,11 +215,19 @@ class AboutPage extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           ListTile(
-            leading: const CircleAvatar(child: Text("2+")),
+            leading: const CircleAvatar(child: Text("2+ Y")),
             title: const Text("Flutter Developer – Taurus Web Solutions"),
             subtitle: const Text(
                 "Oct 2022 – Nov 2024 • Ernakulam, Kerala\n"
                     "Built Flutter apps with REST APIs, Firebase, Offline DB, Google Maps, Play Store & App Store deployment."),
+          ),
+          const SizedBox(height: 20),
+          ListTile(
+            leading: const CircleAvatar(child: Text("3 M")),
+            title: const Text("Sr. Technical Solution Engineer - Flutter – Spiralcode Innovates"),
+            subtitle: const Text(
+                "Nov 2025 – Feb 2026 • Infopark,Kakkanad, Kerala\n"
+                    "Built Flutter apps with REST APIs, Firebase, Offline DB, Google Maps,Playstore deployment and more."),
           ),
         ],
       ),

@@ -6,15 +6,17 @@ class ProjectCard extends StatefulWidget {
   final String title;
   final String description;
   final String tech;
-  final String githubUrl;
+  final String? playstore; // ✅ optional
+  final String? githubUrl; // ✅ optional
   final String? liveUrl; // ✅ optional
 
   const ProjectCard({
     super.key,
     required this.title,
+    this.playstore,
     required this.description,
     required this.tech,
-    required this.githubUrl,
+    this.githubUrl,
     this.liveUrl,
   });
 
@@ -60,6 +62,8 @@ class _ProjectCardState extends State<ProjectCard> {
 
   Widget _contentSection(ThemeData theme) {
     final hasLive = widget.liveUrl != null && widget.liveUrl!.isNotEmpty;
+    final hasGithub = widget.githubUrl != null && widget.githubUrl!.isNotEmpty;
+    final playStore = widget.playstore != null && widget.playstore!.isNotEmpty;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,8 +89,10 @@ class _ProjectCardState extends State<ProjectCard> {
         ),
         const SizedBox(height: 16),
 
-        // ✅ Buttons Row
-        Row(
+        // ✅ Buttons Wrap
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
           children: [
             if (hasLive)
               ElevatedButton.icon(
@@ -94,12 +100,18 @@ class _ProjectCardState extends State<ProjectCard> {
                 icon: const FaIcon(FontAwesomeIcons.globe, size: 14),
                 label: const Text("Sample View"),
               ),
-            if (hasLive) const SizedBox(width: 10),
-            OutlinedButton.icon(
-              onPressed: () => _openUrl(widget.githubUrl),
-              icon: const FaIcon(FontAwesomeIcons.github, size: 14),
-              label: const Text("GitHub"),
-            ),
+            if (playStore)
+              ElevatedButton.icon(
+                onPressed: () => _openUrl(widget.playstore!),
+                icon: const FaIcon(FontAwesomeIcons.googlePlay, size: 14),
+                label: const Text("Play Store"),
+              ),
+            if (hasGithub)
+              OutlinedButton.icon(
+                onPressed: () => _openUrl(widget.githubUrl!),
+                icon: const FaIcon(FontAwesomeIcons.github, size: 14),
+                label: const Text("GitHub"),
+              ),
           ],
         ),
       ],

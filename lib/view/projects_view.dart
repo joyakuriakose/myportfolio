@@ -10,6 +10,36 @@ class ProjectsPage extends StatelessWidget {
 
   final List<Map<String, String>> _projects = const [
     {
+      "title": "Waves - Pavithram",
+      "description":
+      "It's a field sales/ field operations app used by employees to plan and track "
+          "daily works, route plans, reports and more  ",
+      "tech": "Flutter • Block",
+      "playstore": "https://play.google.com/store/apps/details?id=com.spiralcode.waves2",
+      "live": "https://docs.google.com/document/d/17wX6KtVlcAnulaBxBK59VNboqe_aNfRZ5QSkO6yEhW8/edit?usp=sharing",
+      // "image": "assets/images/projects/tips_and_plans.png"
+    },
+    {
+      "title": "Waves - Sithas ",
+      "description":
+      "Sales management system that helps field sales representatives manage their daily "
+          "operations efficiently- app includes features • sales management • payment collection • "
+          "lead managemt • invoice management • Returns • Stock transfer and more.",
+      "tech": "Flutter • Riverpod",
+     // "github": "https://github.com/joyakuriakose/serviceapp",
+      "live": "https://docs.google.com/document/d/1yBi0TlMuJ7TJ-CJL7tun7QV5gzNWNDuQ5Xmo8-2FI-c/edit?usp=sharing",
+      // "image": "assets/images/projects/tips_and_plans.png"
+    },
+    {
+      "title": "Ozone - Sales Tracker",
+      "description":
+      "Offline first sales tracking and location monitoring application designed for field sales teams.",
+      "tech": "Flutter • Riverpod",
+     // "github": "https://github.com/joyakuriakose/serviceapp",
+      "live": "https://docs.google.com/document/d/1vKPklQPqSl8vbhKBltsw4mYQpjYjQ5kqvbGlf6b3dPs/edit?usp=sharing",
+      // "image": "assets/images/projects/tips_and_plans.png"
+    },
+    {
       "title": "Tips & Plans",
       "description":
       "AC AMC & service management app - request AMC, track service status, get notifications and submit feedback.",
@@ -113,8 +143,9 @@ class ProjectsPage extends StatelessWidget {
               title: p['title']!,
               description: p['description']!,
               tech: p['tech']!,
-              githubUrl: p['github']!,
-              liveUrl: p['live'], // ✅ safe optional
+              githubUrl: p['github'],
+              liveUrl: p['live'],
+              playstore: p['playstore'],
             ),
           );
         }).toList(),
